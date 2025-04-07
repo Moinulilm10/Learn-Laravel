@@ -3,21 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    function getUser()
+    /**
+     * Show the profile for a given user.
+     */
+    public function show(string $id): View
     {
-        return view("user");
-    }
-
-    function aboutUser()
-    {
-        return 'about user';
-    }
-
-    function getUserName($name)
-    {
-        return view('getUser', ['name' => $name]);
+        return view('user.profile', [
+            'user' => User::findOrFail($id)
+        ]);
     }
 }
