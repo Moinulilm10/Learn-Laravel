@@ -12,6 +12,6 @@ class HomeController extends Controller
         $usersCount = User::count();
 
         // Return the 'users' view with the variable
-        return view('users.users', compact('usersCount'));
+        return view('user.users', compact('usersCount'));
     }
 }
