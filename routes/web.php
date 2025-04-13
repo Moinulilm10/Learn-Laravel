@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProvisionServer;
@@ -49,3 +50,7 @@ Route::domain('{company}.myblog.com')->group(function () {
             });
         });
 });
+
+
+
+Route::get('/users', [HomeController::class, 'users']);
